@@ -1,0 +1,27 @@
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#07060f;--panel:#0f0c22;--ink:#e8f1ff;--muted:#a3abd0;--line:#2c2358;--cyan:#00f0ff;--pink:#ff2a9d;--yel:#fcee09;color-scheme:dark}
+html{scroll-padding-top:1.5rem}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{color:var(--ink);background-color:var(--bg);background-image:radial-gradient(60rem 30rem at 90% -5%,rgba(255,42,157,.22),transparent 60%),radial-gradient(50rem 30rem at -10% 100%,rgba(0,240,255,.16),transparent 60%),linear-gradient(rgba(0,240,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,240,255,.05) 1px,transparent 1px);background-size:auto,auto,44px 44px,44px 44px;background-attachment:fixed}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;background:repeating-linear-gradient(0deg,rgba(0,0,0,.22) 0 1px,transparent 1px 3px)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--yel);outline-offset:3px}
+.cut,.cut>.in{clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,20px 100%,0 calc(100% - 20px))}
+.cut{background:linear-gradient(135deg,var(--cyan),var(--pink));padding:1px}
+.cut>.in{background:var(--panel);height:100%}
+.neon{text-shadow:0 0 12px currentColor}
+.tag{display:inline-block;border:1px solid currentColor;padding:.1rem .55rem;font-size:.75rem;font-weight:600;letter-spacing:.08em}
+.chip{border:1px solid var(--line);background:rgba(0,240,255,.06);padding:.3rem .75rem;font-size:.875rem}
+.sec{font-family:Orbitron,sans-serif;font-weight:800;font-size:clamp(1.6rem,4vw,2.4rem);text-transform:uppercase;letter-spacing:.04em}
+.sec::before{content:"// ";color:var(--pink)}
+.slot{background:repeating-linear-gradient(45deg,transparent 0 9px,var(--line) 9px 10px)}
+.glitch{position:relative}
+.glitch::before,.glitch::after{content:attr(data-text);position:absolute;inset:0;pointer-events:none}
+.glitch::before{color:var(--cyan);transform:translate(2px,0);mix-blend-mode:screen}
+.glitch::after{color:var(--pink);transform:translate(-2px,0);mix-blend-mode:screen}
+@media(prefers-reduced-motion:no-preference){
+ .glitch::before{animation:g1 3.2s infinite steps(1)}.glitch::after{animation:g2 3.2s infinite steps(1)}
+ @keyframes g1{0%,90%,100%{clip-path:inset(0 0 100% 0)}91%{clip-path:inset(10% 0 60% 0);transform:translate(-5px,0)}94%{clip-path:inset(55% 0 20% 0);transform:translate(5px,0)}}
+ @keyframes g2{0%,92%,100%{clip-path:inset(0 0 100% 0)}93%{clip-path:inset(40% 0 35% 0);transform:translate(5px,0)}96%{clip-path:inset(75% 0 5% 0);transform:translate(-5px,0)}}
+ .cursor{animation:blink 1s steps(1) infinite}@keyframes blink{50%{opacity:0}}}
+@media(prefers-reduced-motion:reduce){.glitch::before,.glitch::after{display:none}}
+dialog::backdrop{background:rgba(3,2,10,.92)}
