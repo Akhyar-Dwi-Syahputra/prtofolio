@@ -66,7 +66,7 @@ document.getElementById('foto').innerHTML = FOTO.src
   : '<div class="slot flex h-full flex-col items-center justify-center gap-1 text-center"><span class="font-display text-6xl font-extrabold text-pink neon">AD</span><span class="text-sm text-muted">Foto profil belum ditambahkan</span></div>';
 
 (function () {
-  var teks = 'teknisi perangkat · admin data · web front-end', el = document.getElementById('ketik');
+  var teks = 'pengalaman dalam menangani dan memeriksa perangkat keras seperti laptop dan komputer · admin · web front-end', el = document.getElementById('ketik');
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) { el.textContent = '> ' + teks; return; }
   var i = 0, awal = '> ';
   (function ketik() { el.textContent = awal + teks.slice(0, i++); if (i <= teks.length) setTimeout(ketik, 55); })();
